@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let circle = {
+        radius: 4,
+        area() {
+          return Math.PI * this.radius ** 2;
+        },
+      };
+
+      function ar() {
+        console.log("the area of circle:", Math.PI * this.radius ** 2);
+      }
+      function CircleObject(radius) {
+        this.radius = radius;
+        this.area = ar;
+      }
+      console.log(circle.area());
+      let newCircle = new circle(2);
+      newCircle.area();
+    </script>
+  </body>
+</html>
