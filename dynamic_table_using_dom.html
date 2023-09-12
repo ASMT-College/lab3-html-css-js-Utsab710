@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="dynamic"></div>
+    <script>
+      var data = [{ name: "john", age: 20, email: "abc@gamil.com" }];
+      var myDiv = document.getElementById("dynamic");
+      var myTable = document.createElement("table");
+      var myHeadingRow = document.createElement("tr");
+      var myHeadingColumn1 = document.createElement("th");
+      var myHeadingColumn2 = document.createElement("th");
+      var myHeadingColumn3 = document.createElement("th");
+      myHeadingColumn1.innerHTML = "name";
+      myHeadingColumn2.innerHTML = "age";
+      myHeadingColumn3.innerHTML = "email";
+      myHeadingRow.appendChild(myHeadingColumn1);
+      myHeadingRow.appendChild(myHeadingColumn2);
+      myHeadingRow.appendChild(myHeadingColumn3);
+      myTable.appendChild(myHeadingRow);
+      data.forEach(function (item) {
+        var row = document.createElement("tr");
+        var col1 = document.createElement("td");
+        var col2 = document.createElement("td");
+        var col3 = document.createElement("td");
+        col1.innerHTML = item.name;
+        col2.innerHTML = item.age;
+        col3.innerHTML = item.email;
+        row.appendChild(col1);
+        row.appendChild(col2);
+        row.appendChild(col3);
+        myTable.appendChild(row);
+      });
+      myDiv.appendChild(myTable);
+    </script>
+  </body>
+</html>
