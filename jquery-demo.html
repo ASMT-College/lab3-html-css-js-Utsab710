@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#myDiv").hide();
+        // this is event listner in jQuery
+        $("#myDiv").click(function () {
+          alert("hello");
+        });
+        $("#myDiv").on("mouseenter", function () {
+          $("body").css("background-color", "green");
+          //   alert("dbl using on method");
+        });
+        $("#myDiv").on("mouseleave", function () {
+          $("body").css("background-color", "white");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="myDiv">Hello My div</div>
+    <div onclick="$('#myDiv').show()">Show</div>
+    <div onclick="hideMyDiv()">Hide</div>
+
+    <script>
+      function hideMyDiv() {
+        $("#myDiv").hide();
+      }
+    </script>
+  </body>
+</html>
